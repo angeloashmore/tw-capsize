@@ -9,7 +9,10 @@
     "text-box",
     "text-box-trim"
   ],
-  "repository": "angeloashmore/tw-capsize",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angeloashmore/tw-capsize.git"
+  },
   "license": "MIT",
   "author": "Angelo Ashmore",
   "exports": {

@@ -1,6 +1,6 @@
 # tw-capsize
 
-[Capsize](https://seek-oss.github.io/capsize/) for Tailwind CSS v4. It is implemented using [custom utilities](https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities).
+[Capsize](https://seek-oss.github.io/capsize/) for Tailwind CSS v4 implemented using [custom utilities](https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities).
 
 ## Getting started
 
@@ -30,7 +30,7 @@
    /* Repeat for each font family. */
    ```
 
-   To get your font metrics, go to the [Capsize](https://seek-oss.github.io/capsize/), select your font under "1. Choose a font," and select the "JSON" tab. The following metrics are needed:
+   To get your font metrics, go to [Capsize](https://seek-oss.github.io/capsize/), select your font under "1. Choose a font," and select the "JSON" tab. The following metrics are needed:
    - `--cap-height`
    - `--ascent`
    - `--descent`

@@ -1,11 +1,32 @@
 {
   "name": "tw-capsize",
+  "version": "1.0.0",
+  "description": "A Tailwind CSS utility for trimming empty space above and below text.",
+  "keywords": [
+    "tailwind",
+    "tailwindcss",
+    "capsize",
+    "text-box",
+    "text-box-trim"
+  ],
+  "repository": "angeloashmore/tw-capsize",
+  "license": "MIT",
+  "author": "Angelo Ashmore",
   "exports": {
     ".": {
       "style": "./index.css"
     }
   },
+  "files": [
+    "index.css"
+  ],
+  "scripts": {
+    "format": "prettier --write ."
+  },
   "devDependencies": {
     "prettier": "^3.7.4"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^4.1.18"
   }
 }

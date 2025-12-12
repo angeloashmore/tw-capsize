@@ -1,0 +1,71 @@
+@utility leading-* {
+  --capsize-leading: calc((1rem * 0.25 * --value(number)) / 1px);
+  --capsize-leading: calc((1em * --value([number])) / 1px);
+  --capsize-leading: calc((1em * --value(--leading-*)) / 1px);
+}
+
+@utility leading-none {
+  --capsize-leading: calc(1em / 1px);
+}
+
+@utility text-* {
+  --capsize-font-size-px: calc(--value(--text-*) / 1px);
+  --capsize-font-size-px: calc(--value([length]) / 1px);
+  /* prettier-ignore */
+  --capsize-leading: calc((1em * --value(--text-*--line-height)) / 1px);
+
+  --capsize-leading: calc((1rem * 0.25 * --modifier(number)) / 1px);
+  --capsize-leading: calc((1em * --modifier([number])) / 1px);
+  --capsize-leading: calc((1em * --modifier(--leading-*)) / 1px);
+}
+
+@utility capsize {
+  --descent-abs: max(var(--descent), -1 * var(--descent));
+
+  --ascent-scale: calc(var(--ascent) / var(--units-per-em));
+  --descent-scale: calc(var(--descent-abs) / var(--units-per-em));
+  --cap-height-scale: calc(var(--cap-height) / var(--units-per-em));
+  --line-gap-scale: calc(var(--line-gap) / var(--units-per-em));
+  --line-height-scale: calc(
+    (var(--ascent) + var(--line-gap) + var(--descent-abs)) / var(--units-per-em)
+  );
+  --line-height-offset: calc(
+    (
+        (
+            (var(--line-height-scale) * var(--capsize-font-size-px)) -
+              var(--capsize-leading, var(--capsize-leading-from-text))
+          ) /
+          2
+      ) /
+      var(--capsize-font-size-px)
+  );
+
+  &::before,
+  &::after {
+    content: "";
+    display: table;
+  }
+
+  &::before {
+    margin-bottom: calc(
+      (
+          (
+              var(--ascent-scale) - var(--cap-height-scale) +
+                var(--line-gap-scale) / 2
+            ) -
+            var(--line-height-offset)
+        ) *
+        -1em
+    );
+  }
+
+  &::after {
+    margin-top: calc(
+      (
+          (var(--descent-scale) + var(--line-gap-scale) / 2) -
+            var(--line-height-offset)
+        ) *
+        -1em
+    );
+  }
+}

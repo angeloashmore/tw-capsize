@@ -1,0 +1,11 @@
+{
+  "name": "tw-capsize",
+  "exports": {
+    ".": {
+      "style": "./index.css"
+    }
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4"
+  }
+}
